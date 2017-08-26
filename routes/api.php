@@ -16,3 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/git', 'TestController@getGithub');
+Route::get('/account', 'TestController@getAccount');
