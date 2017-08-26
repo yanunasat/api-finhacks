@@ -95,7 +95,13 @@ class FireController extends Controller
         {
             $res['success'] = false;
             $res['message'] = 'user Id incorrect!';
+            return response()->json($res);
+        }
 
+        if($amount < 10000)
+        {
+            $res['success'] = false;
+            $res['message'] = 'Minimum Amount Rp. 10.0000!';
             return response()->json($res);
         }
 
@@ -139,5 +145,5 @@ class FireController extends Controller
 
         return response()->json($res);
     }
-    
+
 }
