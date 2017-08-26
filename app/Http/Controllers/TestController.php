@@ -43,7 +43,7 @@ class TestController extends Controller
         $client = new Client();
         $res    = $client->request('POST', 'https://api.finhacks.id/api/oauth/token',[
             'headers'       => [
-                                'Authentication' => 'Basic '.base64_encode('d4384a01-a055-4d83-a9ea-378dcd946a68:df0608f0-3314-4ae4-89db-f27f04317398')
+                                'Authentication' => 'Basic ZDQzODRhMDEtYTA1NS00ZDgzLWE5ZWEtMzc4ZGNkOTQ2YTY4OmRmMDYwOGYwLTMzMTQtNGFlNC04OWRiLWYyN2YwNDMxNzM5OA=='
             ],
             'form_params'   => [
                                 'grant_type' => 'client_credentials'
