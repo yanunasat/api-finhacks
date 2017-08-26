@@ -46,9 +46,9 @@ class TestController extends Controller
             'headers' => [
                             'Authentication' => $basic
                         ],
-            'form_params'   => [
+            'body'     => json_encode([
                             'grant_type' => 'MjY4YjIwNjktYjA5OS00ZmEyLTgxNDgtMWYxYzAzMjdmZTYzOmIzODNjMzVkLTNjMTEtNGNlNi1iNjMxLTg3NjdmNGMyMDg0Yg=='
-            ]
+            ])
 
         ]);
 
