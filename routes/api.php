@@ -22,3 +22,5 @@ Route::get('/account', 'TestController@getAccount');
 Route::get('/token', 'TestController@getToken');
 
 Route::get('/rate', 'BcaController@getRate');
+
+Route::get('/user/{id}', 'BcaController@getUser');
