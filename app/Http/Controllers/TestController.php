@@ -46,7 +46,7 @@ class TestController extends Controller
             'headers' => [
                             'Authentication' => $basic
                         ],
-            'body'     => [
+            'form_params'   => [
                             'grant_type' => 'MjY4YjIwNjktYjA5OS00ZmEyLTgxNDgtMWYxYzAzMjdmZTYzOmIzODNjMzVkLTNjMTEtNGNlNi1iNjMxLTg3NjdmNGMyMDg0Yg=='
             ]
 
