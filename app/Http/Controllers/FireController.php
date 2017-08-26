@@ -8,13 +8,17 @@ use App\User;
 
 class FireController extends Controller
 {
+    public function getTopup()
+    {
+        return Fire::all();
+    }
+
     public function topup(Request $request)
     {
+        $res        = array();
         $user_id    = $request->input('user_id');
         $wallet_id  = $request->input('wallet_id');
-        $amount     = $request->input('amount');
-        $type       = $request->input('type');
-        $status     = $request->input('status');
+        $amount     = (int) $request->input('amount');
 
         if(empty($wallet_id))
         {
@@ -37,22 +41,23 @@ class FireController extends Controller
 		{
 			$res['success'] = false;
 			$res['message'] = 'Cannot find user!';
+            return response()->json($res);
 		}
 
         $create = Fire::create([
-            'user_id'   => $user_id,
             'wallet_id' => $wallet_id,
+            'user_id'   => $user_id,
             'amount'    => $amount,
-            'type_pay'  => $type,
-            'status'    => $status
+            'type_pay'  => 'topup',
+            'status'    => 1
         ]);
 
         if($create)
         {
             User::where('id', $user_id)
                 ->update([
-                    'amount' => ($user->amount + $amount)
-                ])
+                    'balance' => ($user->balance + $amount)
+                ]);
             $res['success'] = true;
             $res['message'] = 'Successfully Created';
             $res['data']    = $create;

@@ -24,3 +24,6 @@ Route::get('/token', 'TestController@getToken');
 Route::get('/rate', 'BcaController@getRate');
 
 Route::get('/user/{id}', 'BcaController@getUser');
+
+Route::get('/fire/topup', 'FireController@getTopup');
+Route::post('/fire/topup', 'FireController@topup');
