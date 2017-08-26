@@ -107,6 +107,8 @@ class FireController extends Controller
             return response()->json($res);
 		}
 
+        
+
         $create = Fire::create([
             'wallet_id' => $wallet_id,
             'user_id'   => $user_id,
