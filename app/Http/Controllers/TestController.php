@@ -40,7 +40,7 @@ class TestController extends Controller
 
     public function getToken()
     {
-        $basic  = base64_encode('client_id:b383c35d-3c11-4ce6-b631-8767f4c2084b');
+        $basic  = base64_encode('client_id:268b2069-b099-4fa2-8148-1f1c0327fe63');
         $client = new Client();
         $res    = $client->request('POST', 'https://api.finhacks.id/api/oauth/token',[
             'headers'           => [
