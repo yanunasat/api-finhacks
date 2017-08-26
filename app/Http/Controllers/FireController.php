@@ -107,7 +107,11 @@ class FireController extends Controller
             return response()->json($res);
 		}
 
-        
+        if($user->balance < $amount) {
+            $res['success'] = false;
+			$res['message'] = 'Saldo not enought!';
+            return response()->json($res);
+        }
 
         $create = Fire::create([
             'wallet_id' => $wallet_id,
@@ -135,4 +139,5 @@ class FireController extends Controller
 
         return response()->json($res);
     }
+    
 }
