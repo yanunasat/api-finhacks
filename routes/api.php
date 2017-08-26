@@ -26,4 +26,6 @@ Route::get('/rate', 'BcaController@getRate');
 Route::get('/user/{id}', 'BcaController@getUser');
 
 Route::get('/fire/topup', 'FireController@getTopup');
+Route::get('/fire/transfer', 'FireController@getTransfer');
 Route::post('/fire/topup', 'FireController@topup');
+Route::post('/fire/transfer', 'FireController@transfer');
