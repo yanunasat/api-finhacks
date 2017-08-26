@@ -20,3 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/git', 'TestController@getGithub');
 Route::get('/account', 'TestController@getAccount');
 Route::get('/token', 'TestController@getToken');
+
+Route::get('/rate', 'BcaController@getRate');
