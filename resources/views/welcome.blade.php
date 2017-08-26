@@ -83,7 +83,7 @@
                 </div>
 
                 <p>
-                    Powered by : <strong>Go Wire</strong>
+                    Powered by : <strong>BCA</strong> | Created by : <strong>Go Wire</strong>
                 </p>
             </div>
         </div>
