@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
+use cURL;
 
 class TestController extends Controller
 {
@@ -51,5 +52,10 @@ class TestController extends Controller
         ]);
 
         return $res->getBody();
+    }
+
+    public function getCurl()
+    {
+	return cURL::get('http://www.google.com');	
     }
 }

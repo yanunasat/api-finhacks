@@ -1,0 +1,40 @@
+<?php
+require '../bca-api-sdk-php.phar;
+
+$builder = new \Bca\Api\Sdk\BusinessBanking\BusinessBankingApiConfigBuilder();
+$builder->baseApiUri('https://api.finhacks.id/');
+$builder->baseOAuth2Uri('https://api.finhacks.id/');
+$builder->clientId('563eedbf-2ce6-4238-8c2c-7d711945b4da');
+$builder->clientSecret('69e2b8b4-b4ff-4993-857d-f660a02201e0');
+$builder->apiKey('acb8aaf1-f08a-4fe1-9773-a9ee2d585475');
+$builder->apiSecret('9b074547-9ea6-4e51-b2f0-aabeef927506');
+$builder->origin('182.16.165.76');
+$builder->corporateID('FHK6ID');
+
+$config = $builder->build();
+
+#$businessBankingApi = new \Bca\Api\Sdk\BusinessBanking\BusinessBankingApi($config);
+
+#$response = $businessBankingApi->getBalance(['0201245680', '0063001004','1111111111']);
+
+#$params = new \Bca\Api\Sdk\BusinessBanking\Models\Requests\StatementParams();
+#$params->setStartDate('2016-01-29');
+#$params->setEndDate('2016-01-30');
+
+#$response = $businessBankingApi->getStatement('0201245680', $params);
+
+GeneralApiConfigBuilder builder = new GeneralApiConfigBuilder();
+// do configuration  . . .
+GeneralApiConfig config = builder.build();
+
+GeneralApi generalApi = new GeneralApi(config);
+
+ForexParams params = new ForexParams();
+params.setRateType("erate,tt,yy");
+params.setCurrency("USD,JPY,XXX");
+
+ForexResponse response = generalApi.getForexRate(params);
+
+print_r(response);
+
+?>
