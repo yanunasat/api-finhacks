@@ -46,7 +46,7 @@ class TestController extends Controller
                                 'Authentication' => base64_encode('client_id:00a2cecf-57a9-495d-b337-05379481cea2')
             ],
             'form_params'   => [
-                                'grant_type' => 'MDBhMmNlY2YtNTdhOS00OTVkLWIzMzctMDUzNzk0ODFjZWEyOjkwZjg2NmYwLTBiYjEtNDE5Zi1iZmNjLWFiZDNjZTY1ZDBlMQ=='
+                                'grant_type' => 'client_credentials'
             ]
         ]);
 
